@@ -7,7 +7,7 @@ import de.hsos.mocktail.Enitity.Zutat;
 public class CreateMocktailDTO {
     private String name;
     private String beschreibung;
-    private final List<Zutat> zutaten;
+    private List<Zutat> zutaten;
     private String ersteller; 
 
 

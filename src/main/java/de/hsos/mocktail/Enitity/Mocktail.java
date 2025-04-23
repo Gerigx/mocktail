@@ -1,5 +1,6 @@
 package de.hsos.mocktail.Enitity;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -11,8 +12,12 @@ public class Mocktail {
     private long id;
     private String name;
     private String beschreibung;
-    private final List<Zutat> zutaten;
+    private List<Zutat> zutaten;
     private String ersteller; 
+
+    public Mocktail(){
+        zutaten = new ArrayList<>();
+    }
 
     public Mocktail(long id, String name, String beschreibung, List<Zutat> zutaten, String ersteller ){
         this.id = id;
