@@ -23,58 +23,51 @@ public class MocktailRepository implements MocktailKatalog{
     }
 
     private void initDemoMocktails() {
-        // Mocktail 1: Very Summery
-        List<Zutat> zutatenSummery = new ArrayList<>();
-        zutatenSummery.add(new Zutat("Erdbeerpüree", 30.0, "ml", "Frisch püriert"));
-        zutatenSummery.add(new Zutat("Zitronensaft", 20.0, "ml", "Frisch gepresst"));
-        zutatenSummery.add(new Zutat("Zuckersirup", 15.0, "ml", ""));
-        zutatenSummery.add(new Zutat("Mineralwasser", 150.0, "ml", "Mit Kohlensäure"));
-        zutatenSummery.add(new Zutat("Minzblätter", 5.0, "Stück", "Zum Garnieren"));
-        zutatenSummery.add(new Zutat("Eiswürfel", 6.0, "Stück", ""));
+        // Mocktail 1: Trockener Mund
+        List<Zutat> zutatenTrocken = new ArrayList<>();
+        zutatenTrocken.add(new Zutat("Sand", 10.0, "l", "Feinkörnig"));
+        zutatenTrocken.add(new Zutat("Wodka", 5.0, "l", "Hochprozentig"));
 
-        CreateMocktailDTO summery = new CreateMocktailDTO(
-            "Very Summery",
-            "Ein erfrischender Sommerdrink mit Erdbeeren und Minze - perfekt für heiße Tage.",
-            zutatenSummery,
-            "Team Quarkus"
+        CreateMocktailDTO trocken = new CreateMocktailDTO(
+            "Trockener Mund",
+            "Verursacht Sodbrennen",
+            zutatenTrocken,
+            "Tom und Oli"
         );
-        createMocktail(summery);
+        createMocktail(trocken);
         
-        // Mocktail 2: Ginger Lemony
-        List<Zutat> zutatenGinger = new ArrayList<>();
-        zutatenGinger.add(new Zutat("Ingwer", 20.0, "g", "Frisch gerieben"));
-        zutatenGinger.add(new Zutat("Zitronensaft", 30.0, "ml", "Frisch gepresst"));
-        zutatenGinger.add(new Zutat("Honig", 15.0, "ml", "Flüssig"));
-        zutatenGinger.add(new Zutat("Orangensaft", 100.0, "ml", "Frisch gepresst"));
-        zutatenGinger.add(new Zutat("Mineralwasser", 100.0, "ml", "Mit Kohlensäure"));
-        zutatenGinger.add(new Zutat("Eiswürfel", 5.0, "Stück", ""));
-        zutatenGinger.add(new Zutat("Zitronenscheibe", 1.0, "Stück", "Zum Garnieren"));
+        // Mocktail 2: Elden Mische
+        List<Zutat> zutatenElden = new ArrayList<>();
+        zutatenElden.add(new Zutat("Alkohol", 1.0, "l", "Viel"));
+        zutatenElden.add(new Zutat("Kreuz", 1.0, "Stück", ""));
+        zutatenElden.add(new Zutat("Quees", 2.0, "Stück", ""));
+        zutatenElden.add(new Zutat("Unbekannte Zutat", 0.5, "l", "Kann mich nicht mehr erinnern"));
+        zutatenElden.add(new Zutat("Wilder Kram", 3.0, "l", "War definitiv wild"));
 
-        CreateMocktailDTO ginger = new CreateMocktailDTO(
-            "Ginger Lemony",
-            "Ein würziger Mocktail mit Ingwer und Zitrusfrüchten, der den Stoffwechsel anregt.",
-            zutatenGinger,
-            "Mocktail-Meister"
+        CreateMocktailDTO elden = new CreateMocktailDTO(
+            "Elden Mische",
+            "Nur für den Fürst",
+            zutatenElden,
+            "Oli (kinda alki oder so)"
         );
-        createMocktail(ginger);
+        createMocktail(elden);
         
-        // Mocktail 3: Tropical Paradise
-        List<Zutat> zutatenTropical = new ArrayList<>();
-        zutatenTropical.add(new Zutat("Ananassaft", 100.0, "ml", "Frisch gepresst"));
-        zutatenTropical.add(new Zutat("Kokosmilch", 50.0, "ml", ""));
-        zutatenTropical.add(new Zutat("Bananenmark", 30.0, "ml", "Frisch püriert"));
-        zutatenTropical.add(new Zutat("Limettensaft", 10.0, "ml", "Frisch gepresst"));
-        zutatenTropical.add(new Zutat("Agavendicksaft", 15.0, "ml", ""));
-        zutatenTropical.add(new Zutat("Crushed Ice", 100.0, "g", ""));
-        zutatenTropical.add(new Zutat("Ananasscheibe", 1.0, "Stück", "Zum Garnieren"));
+        // Mocktail 3: Gottlose Kreation
+        List<Zutat> zutatenGottlos = new ArrayList<>();
+        zutatenGottlos.add(new Zutat("Energydrink", 1.0, "l", "Abgelaufen"));
+        zutatenGottlos.add(new Zutat("Ketchup", 250.0, "ml", "Mit extra Zucker"));
+        zutatenGottlos.add(new Zutat("Mayonnaise", 100.0, "ml", "Die scharfe Variante"));
+        zutatenGottlos.add(new Zutat("Essiggurken-Saft", 200.0, "ml", "Aus dem Glas"));
+        zutatenGottlos.add(new Zutat("Crushed Ice", 300.0, "g", "Muss sein für die Optik"));
+        zutatenGottlos.add(new Zutat("Dosenthunfisch-Öl", 30.0, "ml", "Am besten 2 Wochen offen"));
 
-        CreateMocktailDTO tropical = new CreateMocktailDTO(
-            "Tropical Paradise",
-            "Ein cremiger Mocktail mit exotischen Früchten, der dich gedanklich an den Strand versetzt.",
-            zutatenTropical,
-            "Quarkus-Cocktail-Bar"
+        CreateMocktailDTO gottlos = new CreateMocktailDTO(
+            "Der Gottlose",
+            "Trink das und du kommst garantiert in die Hölle. Oder ins Krankenhaus. Oder beides.",
+            zutatenGottlos,
+            "Das Chaos persönlich"
         );
-        createMocktail(tropical);
+        createMocktail(gottlos);
     }
 
 

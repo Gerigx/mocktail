@@ -1,5 +1,6 @@
 package de.hsos.mocktail.Boundary.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import de.hsos.mocktail.Enitity.Zutat;
@@ -10,6 +11,9 @@ public class CreateMocktailDTO {
     private List<Zutat> zutaten;
     private String ersteller; 
 
+    public CreateMocktailDTO(){
+        zutaten = new ArrayList<>();
+    }
 
     public CreateMocktailDTO(String name, String beschreibung, List<Zutat> zutaten, String ersteller) {
         this.name = name;
