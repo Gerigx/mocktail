@@ -1,5 +1,9 @@
 package de.hsos.mocktail.Boundary.Resourceses;
 
+
+
+import org.jboss.logging.Logger;
+
 import de.hsos.mocktail.Controller.MocktailManager;
 import de.hsos.mocktail.Enitity.Mocktail;
 import jakarta.inject.Inject;
@@ -14,6 +18,9 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 
+//TODO: add info and trace log
+//TODO: add rety, timeout and fallback when nessesary
+
 @Path("/mocktail/{id}")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -22,9 +29,14 @@ public class MocktailIDResource {
     @Inject
     MocktailManager mocktailManager;
 
+    @Inject
+    Logger logTest;
+
     @GET
     public Mocktail getMocktail(@PathParam("id") long mocktailID){
-        return mocktailManager.getMocktail(mocktailID);
+        logTest.info("Get request received with the ID " + mocktailID);
+        logTest.trace("Das ist ein Test");
+        return mocktailManager.getMocktail(mocktailID);        
     }
 
     // PUT
