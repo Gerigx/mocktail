@@ -8,6 +8,7 @@ import java.util.concurrent.ConcurrentMap;
 import de.hsos.mocktail.Boundary.dto.CreateMocktailDTO;
 import de.hsos.mocktail.Enitity.Mocktail;
 import de.hsos.mocktail.Enitity.MocktailKatalog;
+import de.hsos.mocktail.Enitity.MocktailKategorie;
 import de.hsos.mocktail.Enitity.Zutat;
 import jakarta.inject.Singleton;
 
@@ -32,7 +33,8 @@ public class MocktailRepository implements MocktailKatalog{
             "Trockener Mund",
             "Verursacht Sodbrennen",
             zutatenTrocken,
-            "Tom und Oli"
+            "Tom und Oli",
+            MocktailKategorie.MOCKTAIL
         );
         createMocktail(trocken);
         
@@ -48,7 +50,8 @@ public class MocktailRepository implements MocktailKatalog{
             "Elden Mische",
             "Nur für den Fürst",
             zutatenElden,
-            "Oli (kinda alki oder so)"
+            "Oli (kinda alki oder so)",
+            MocktailKategorie.MOCKTAIL
         );
         createMocktail(elden);
         
@@ -65,7 +68,8 @@ public class MocktailRepository implements MocktailKatalog{
             "Der Gottlose",
             "Trink das und du kommst garantiert in die Hölle. Oder ins Krankenhaus. Oder beides.",
             zutatenGottlos,
-            "Das Chaos persönlich"
+            "Das Chaos persönlich",
+            MocktailKategorie.MOCKTAIL
         );
         createMocktail(gottlos);
     }
@@ -87,7 +91,8 @@ public class MocktailRepository implements MocktailKatalog{
                                             mocktail.getName(), 
                                             mocktail.getBeschreibung(), 
                                             mocktail.getZutaten(), 
-                                            mocktail.getErsteller());
+                                            mocktail.getErsteller(),
+                                            mocktail.getMocktailKategorie());
         mocktails.put(newMocktail.getId(), newMocktail);
 
         return true;

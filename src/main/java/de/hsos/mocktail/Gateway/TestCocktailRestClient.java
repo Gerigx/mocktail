@@ -1,6 +1,21 @@
 package de.hsos.mocktail.Gateway;
 
-public class CocktailRestClient {
+
+import de.hsos.mocktail.Gateway.acl.CocktailDTO;
+import de.hsos.mocktail.Gateway.acl.CocktailResponseDTO;
+
+
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.ws.rs.ProcessingException;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+
+import java.util.List;
+
+public class TestCocktailRestClient {
     public List<CocktailDTO> getCocktails(String searchName) {
         String versionNr = "v1";
         String pathName = "/1/search.php";

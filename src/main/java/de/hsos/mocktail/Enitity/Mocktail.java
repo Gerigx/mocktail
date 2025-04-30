@@ -31,16 +31,23 @@ public class Mocktail {
     
     @Schema(description = "Name des Erstellers des Mocktails", example = "Max Mustermann")
     private String ersteller; 
+
+    @NotBlank
+    private MocktailKategorie mocktailKategorie;
+
+
+
     public Mocktail(){
         zutaten = new ArrayList<>();
     }
 
-    public Mocktail(long id, String name, String beschreibung, List<Zutat> zutaten, String ersteller ){
+    public Mocktail(long id, String name, String beschreibung, List<Zutat> zutaten, String ersteller, MocktailKategorie mocktailKategorie){
         this.id = id;
         this.name = name;
         this.beschreibung = beschreibung;
         this.zutaten = zutaten;
         this.ersteller = ersteller;
+        this.mocktailKategorie = mocktailKategorie;
     }
 
     public long getId() {
@@ -97,6 +104,14 @@ public class Mocktail {
 
     public List<Zutat> getZutaten(){
         return Collections.unmodifiableList(zutaten);
+    }
+
+    public MocktailKategorie getMocktailKategorie() {
+        return mocktailKategorie;
+    }
+
+    public void setMocktailKategorie(MocktailKategorie mocktailKategorie) {
+        this.mocktailKategorie = mocktailKategorie;
     }
 
 }
