@@ -2,10 +2,11 @@ package de.hsos.mocktail.Gateway.acl;
 
 import jakarta.json.bind.annotation.JsonbTypeDeserializer;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 @JsonbTypeDeserializer(value = CocktailDTODeserializer.class)
-
 public class CocktailDTO {
     private String strDrink;
 
@@ -294,15 +295,50 @@ public class CocktailDTO {
     }
 
     public List<String> getIngredients() {
-        return List.of(strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5, strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10, strIngredient11, strIngredient12, strIngredient13, strIngredient14, strIngredient15).stream()
-                .filter(ingredient -> ingredient != null && !ingredient.isBlank())
-                .toList();
+        // Verwende eine ArrayList statt List.of(), um null-Werte zu vermeiden
+        List<String> ingredients = new ArrayList<>();
+        
+        // Füge jedes nicht-leere Ingredient zur Liste hinzu
+        if (strIngredient1 != null && !strIngredient1.isBlank()) ingredients.add(strIngredient1);
+        if (strIngredient2 != null && !strIngredient2.isBlank()) ingredients.add(strIngredient2);
+        if (strIngredient3 != null && !strIngredient3.isBlank()) ingredients.add(strIngredient3);
+        if (strIngredient4 != null && !strIngredient4.isBlank()) ingredients.add(strIngredient4);
+        if (strIngredient5 != null && !strIngredient5.isBlank()) ingredients.add(strIngredient5);
+        if (strIngredient6 != null && !strIngredient6.isBlank()) ingredients.add(strIngredient6);
+        if (strIngredient7 != null && !strIngredient7.isBlank()) ingredients.add(strIngredient7);
+        if (strIngredient8 != null && !strIngredient8.isBlank()) ingredients.add(strIngredient8);
+        if (strIngredient9 != null && !strIngredient9.isBlank()) ingredients.add(strIngredient9);
+        if (strIngredient10 != null && !strIngredient10.isBlank()) ingredients.add(strIngredient10);
+        if (strIngredient11 != null && !strIngredient11.isBlank()) ingredients.add(strIngredient11);
+        if (strIngredient12 != null && !strIngredient12.isBlank()) ingredients.add(strIngredient12);
+        if (strIngredient13 != null && !strIngredient13.isBlank()) ingredients.add(strIngredient13);
+        if (strIngredient14 != null && !strIngredient14.isBlank()) ingredients.add(strIngredient14);
+        if (strIngredient15 != null && !strIngredient15.isBlank()) ingredients.add(strIngredient15);
+        
+        return ingredients;
     }
 
     public List<String> getMeasures() {
-        return List.of(strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5, strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10, strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15).stream()
-                .filter(measure -> measure != null && !measure.isBlank())
-                .toList();
+        // Wie bei Ingredients, verwende eine ArrayList
+        List<String> measures = new ArrayList<>();
+        
+        // Füge jedes nicht-leere Measure zur Liste hinzu
+        if (strMeasure1 != null && !strMeasure1.isBlank()) measures.add(strMeasure1);
+        if (strMeasure2 != null && !strMeasure2.isBlank()) measures.add(strMeasure2);
+        if (strMeasure3 != null && !strMeasure3.isBlank()) measures.add(strMeasure3);
+        if (strMeasure4 != null && !strMeasure4.isBlank()) measures.add(strMeasure4);
+        if (strMeasure5 != null && !strMeasure5.isBlank()) measures.add(strMeasure5);
+        if (strMeasure6 != null && !strMeasure6.isBlank()) measures.add(strMeasure6);
+        if (strMeasure7 != null && !strMeasure7.isBlank()) measures.add(strMeasure7);
+        if (strMeasure8 != null && !strMeasure8.isBlank()) measures.add(strMeasure8);
+        if (strMeasure9 != null && !strMeasure9.isBlank()) measures.add(strMeasure9);
+        if (strMeasure10 != null && !strMeasure10.isBlank()) measures.add(strMeasure10);
+        if (strMeasure11 != null && !strMeasure11.isBlank()) measures.add(strMeasure11);
+        if (strMeasure12 != null && !strMeasure12.isBlank()) measures.add(strMeasure12);
+        if (strMeasure13 != null && !strMeasure13.isBlank()) measures.add(strMeasure13);
+        if (strMeasure14 != null && !strMeasure14.isBlank()) measures.add(strMeasure14);
+        if (strMeasure15 != null && !strMeasure15.isBlank()) measures.add(strMeasure15);
+        
+        return measures;
     }
-
 }

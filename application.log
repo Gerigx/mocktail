@@ -1,8 +1,5 @@
-2025-04-24 11:13:01 INFO  [io.quarkus] (Quarkus Main Thread) mocktail 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.21.3) started in 0.580s. Listening on: http://localhost:8080
-2025-04-24 11:13:01 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
-2025-04-24 11:13:01 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, rest, rest-jsonb, smallrye-context-propagation, vertx]
-2025-04-24 11:13:01 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload total time: 0.616s 
-2025-04-24 11:13:01 INFO  [de.hsos.mocktail.Boundary.Resourceses.MocktailIDResource] (executor-thread-1) Get request received with the ID 0
-2025-04-24 11:15:20 INFO  [de.hsos.mocktail.Boundary.Resourceses.MocktailIDResource] (executor-thread-1) Get request received with the ID 0
-2025-04-24 11:15:39 INFO  [de.hsos.mocktail.Boundary.Resourceses.MocktailIDResource] (executor-thread-1) Get request received with the ID 0
-2025-04-24 11:15:42 INFO  [de.hsos.mocktail.Boundary.Resourceses.MocktailIDResource] (executor-thread-1) Get request received with the ID 0
+2025-04-30 17:38:23 INFO  [io.quarkus] (Quarkus Main Thread) mocktail 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.21.3) started in 3.685s. Listening on: http://localhost:8080
+2025-04-30 17:38:23 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2025-04-30 17:38:23 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, hibernate-validator, rest, rest-client, rest-client-jackson, rest-jsonb, smallrye-context-propagation, smallrye-fault-tolerance, smallrye-openapi, swagger-ui, vertx]
+2025-04-30 17:38:29 INFO  [de.hsos.mocktail.Gateway.TestCocktailRestClient] (executor-thread-1) Rufe externe Cocktail-API auf mit Suchbegriff: margarita
+2025-04-30 17:38:30 INFO  [de.hsos.mocktail.Gateway.TestCocktailRestClient] (executor-thread-1) API-Antwort erfolgreich verarbeitet, 6 Cocktails abgerufen

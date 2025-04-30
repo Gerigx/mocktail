@@ -8,8 +8,10 @@ import de.hsos.mocktail.Enitity.CocktailKatalog;
 import de.hsos.mocktail.Enitity.Mocktail;
 import de.hsos.mocktail.Enitity.MocktailKategorie;
 import de.hsos.mocktail.Enitity.Zutat;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
+@ApplicationScoped
 public class CocktailRepository implements CocktailKatalog {
     
     /*@RestClient
@@ -19,8 +21,7 @@ public class CocktailRepository implements CocktailKatalog {
     TestCocktailRestClient cocktailRestClient;
 
 
-    // https://stackoverflow.com/questions/18552005/is-there-a-concise-way-to-iterate-over-a-stream-with-indices-in-java-8
-
+        // stack overlfow und mit claude lesbarere gemacht: https://stackoverflow.com/questions/18552005/is-there-a-concise-way-to-iterate-over-a-stream-with-indices-in-java-8
     @Override
     public List<Mocktail> getAllMocktails(Optional<String> name, Optional<String> recipeIngredient) {
         return cocktailRestClient.getCocktails(name.orElse(""))

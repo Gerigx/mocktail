@@ -3,6 +3,7 @@ package de.hsos.mocktail.Boundary.Resourceses;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.eclipse.microprofile.faulttolerance.Retry;
 import org.eclipse.microprofile.faulttolerance.Timeout;
@@ -14,6 +15,7 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import de.hsos.mocktail.Boundary.dto.CreateMocktailDTO;
+import de.hsos.mocktail.Controller.CocktailManager;
 import de.hsos.mocktail.Controller.MocktailManager;
 import de.hsos.mocktail.Enitity.Mocktail;
 import jakarta.inject.Inject;
@@ -22,6 +24,7 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
@@ -146,5 +149,16 @@ public class MocktailResource {
             log.error("POST /Mocktail: Fehler beim Erstellen des Mocktails", e);
             throw e;
         }
+    }
+
+    @Inject
+    CocktailManager cocktailManager; // Falls noch nicht vorhanden
+
+    @GET
+    @Path("/api-test")
+    public List<Mocktail> testCocktailAPI(@QueryParam("name") String name) {
+        Optional<String> nameOpt = name != null ? Optional.of(name) : Optional.of("margarita");
+        Optional<String> ingredient = Optional.empty();
+        return cocktailManager.getAllMocktails(nameOpt, ingredient);
     }
 }

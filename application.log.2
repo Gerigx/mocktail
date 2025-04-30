@@ -1,0 +1,43 @@
+2025-04-30 17:26:06 INFO  [io.quarkus] (Quarkus Main Thread) mocktail 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.21.3) started in 0.913s. Listening on: http://localhost:8080
+2025-04-30 17:26:06 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2025-04-30 17:26:06 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, hibernate-validator, rest, rest-client, rest-client-jackson, rest-jsonb, smallrye-context-propagation, smallrye-fault-tolerance, smallrye-openapi, swagger-ui, vertx]
+2025-04-30 17:26:06 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload total time: 2.119s 
+2025-04-30 17:26:07 ERROR [io.quarkus.vertx.http.runtime.QuarkusErrorHandler] (executor-thread-1) HTTP Request to /Mocktail/api-test?name=margarita failed, error id: 2b208c22-7ebe-45ad-aa04-7f7051c43739-1: java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:233)
+	at java.base/java.util.ImmutableCollections.listFromArray(ImmutableCollections.java:190)
+	at java.base/java.util.List.of(List.java:1047)
+	at de.hsos.mocktail.Gateway.acl.CocktailDTO.getIngredients(CocktailDTO.java:297)
+	at de.hsos.mocktail.Gateway.CocktailRepository.lambda$getAllMocktails$3(CocktailRepository.java:35)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622)
+	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627)
+	at de.hsos.mocktail.Gateway.CocktailRepository.getAllMocktails(CocktailRepository.java:47)
+	at de.hsos.mocktail.Gateway.CocktailRepository_ClientProxy.getAllMocktails(Unknown Source)
+	at de.hsos.mocktail.Controller.CocktailService.getAllMocktails(CocktailService.java:20)
+	at de.hsos.mocktail.Controller.CocktailService_ClientProxy.getAllMocktails(Unknown Source)
+	at de.hsos.mocktail.Boundary.Resourceses.MocktailResource.testCocktailAPI(MocktailResource.java:162)
+	at de.hsos.mocktail.Boundary.Resourceses.MocktailResource$quarkusrestinvoker$testCocktailAPI_c1ccdeef208881ef5a4c48cdd92dc13eec1c0d6a.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$15.runWith(VertxCoreRecorder.java:638)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2675)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2654)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1627)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1594)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2025-04-30 17:26:49 INFO  [de.hsos.mocktail.Boundary.Resourceses.MocktailResource] (executor-thread-1) GET /Mocktail: Abrufen aller Mocktails
+2025-04-30 17:26:49 INFO  [de.hsos.mocktail.Boundary.Resourceses.MocktailResource] (executor-thread-1) GET /Mocktail: 3 Mocktails erfolgreich abgerufen
+2025-04-30 17:30:44 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-3) Restarting quarkus due to changes in CocktailDTO.class, TestCocktailRestClient.class, CocktailRepository.class, CocktailResponseDTO.class.
+2025-04-30 17:30:44 INFO  [io.quarkus] (Quarkus Main Thread) mocktail stopped in 0.016s
