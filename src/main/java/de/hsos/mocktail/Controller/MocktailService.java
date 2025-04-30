@@ -9,9 +9,14 @@ import de.hsos.mocktail.Enitity.MocktailKatalog;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
+// quasie wie ein singelton bloß das ein proxy erstellt wird vorher und der scheduler reciht das rum
+// ichh kann auch rquestScoped drasu amchen dann wird es nur während der request genutzt
+// also application scoped ist gut bei sehr vielen nutzungen
+// request bei seltenerer nutzung und wenn das system zustandlos sein soll
 @ApplicationScoped
 public class MocktailService implements MocktailManager {
 
+    // achte auf qualifier
     @Inject
     MocktailKatalog mocktailKatalog;
     

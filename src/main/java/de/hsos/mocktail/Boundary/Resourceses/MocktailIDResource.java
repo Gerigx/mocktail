@@ -1,7 +1,5 @@
 package de.hsos.mocktail.Boundary.Resourceses;
 
-
-
 import org.jboss.logging.Logger;
 
 import de.hsos.mocktail.Controller.MocktailManager;
@@ -23,15 +21,19 @@ import jakarta.ws.rs.core.Response.Status;
 
 @Path("/mocktail/{id}")
 @Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON) // multiple sachen möglich 
 public class MocktailIDResource {
 
+    // wenn privat dann gibts eine reflexion und das ist imperformant
+    // damit entfernen wir acuh das new. Das new is blöd weil es die kopplung erhöht
+    // braucht deshalb auch einen default konstruktor
     @Inject
     MocktailManager mocktailManager;
 
     @Inject
     Logger logTest;
 
+    //fallback?
     @GET
     public Mocktail getMocktail(@PathParam("id") long mocktailID){
         logTest.info("Get request received with the ID " + mocktailID);

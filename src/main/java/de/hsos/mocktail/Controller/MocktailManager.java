@@ -16,4 +16,6 @@ public interface MocktailManager {
 
     boolean updateMocktail(Mocktail mocktail);
 
+    // to dto
+    // from dto, dtos should be cleared in the control layer/ boundary
 }
