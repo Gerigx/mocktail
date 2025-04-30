@@ -16,6 +16,18 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 
+import org.eclipse.microprofile.faulttolerance.*;
+
+import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
+import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.info.Info;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.eclipse.microprofile.openapi.annotations.media.Content;
+
+
+
 //TODO: add info and trace log
 //TODO: add rety, timeout and fallback when nessesary
 
@@ -36,7 +48,7 @@ public class MocktailIDResource {
     //fallback?
     @GET
     @Retry(
-        maxRetries = 3,
+        maxRetries = 3
     )
     @Timeout(2500)
     @Operation(
@@ -68,11 +80,6 @@ public class MocktailIDResource {
         )
     })
     public Mocktail getMocktail(
-            @Parameter(
-                description = "ID des abzurufenden Mocktails",
-                required = true,
-                example = "1"
-            )
             @PathParam("id") long mocktailID){
         logTest.info("GET /mocktail/" + mocktailID + ": Abrufen eines Mocktails");
         logTest.trace("Das ist ein Test");
@@ -93,7 +100,7 @@ public class MocktailIDResource {
     // PUT
     @PUT
     @Retry(
-        maxRetries = 2,
+        maxRetries = 2
     )
     @Timeout(2000)
     @Operation(
@@ -125,11 +132,6 @@ public class MocktailIDResource {
         )
     })
     public Response updateMocktail(
-            @Parameter(
-                description = "ID des zu aktualisierenden Mocktails",
-                required = true,
-                example = "1"
-            )
             @PathParam("id") long mocktailID, 
             @Schema(implementation = Mocktail.class)
             Mocktail mocktail) {
@@ -159,7 +161,7 @@ public class MocktailIDResource {
     // DELETE 
     @DELETE
     @Retry(
-        maxRetries = 1,
+        maxRetries = 1
     )
     @Operation(
         summary = "Löscht einen Mocktail",
@@ -185,11 +187,6 @@ public class MocktailIDResource {
         )
     })
     public Response deleteMocktail(
-            @Parameter(
-                description = "ID des zu löschenden Mocktails",
-                required = true,
-                example = "1"
-            )
             @PathParam("id") long mocktailID) {
         logTest.info("DELETE /mocktail/" + mocktailID + ": Versuch, Mocktail zu löschen");
         

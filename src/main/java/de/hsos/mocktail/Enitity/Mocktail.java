@@ -11,7 +11,7 @@ import jakarta.validation.constraints.NotBlank;
 
 import de.hsos.mocktail.Enitity.Zutat;
 
-@Schema(name="Moktail", discription="Ein Mocktail")
+@Schema(name="Moktail", description="Ein Mocktail")
 public class Mocktail {
 
     @NotBlank
